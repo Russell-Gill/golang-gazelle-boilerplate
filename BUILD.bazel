@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_path")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
+
+go_path(
+    name = "gopath",
+    mode = "link",
+    deps = [
+    ],
+)
+# gazelle:prefix github.com/bzltest/
+
+gazelle(name = "gazelle")

@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "other_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/bzltest/other",
+    visibility = ["//visibility:public"],
+    deps = ["//dependency:dependency_lib"],
+)
+
+go_binary(
+    name = "other",
+    embed = [":other_lib"],
+    visibility = ["//visibility:public"],
+)

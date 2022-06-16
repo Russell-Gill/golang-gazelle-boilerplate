@@ -1,0 +1,22 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "dependency_lib",
+    srcs = ["dependencyone.go"],
+    importpath = "github.com/bzltest/dependency",
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "done",
+    srcs = ["done.go"],
+    importpath = "",
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "dependecy",
+    srcs = ["done.go"],
+    importpath = "github.com/bzltest/dependecy",
+    visibility = ["//visibility:public"],
+)
